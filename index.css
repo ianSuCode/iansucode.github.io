@@ -1,0 +1,61 @@
+body {
+  font-family: 'Ubuntu', Tahoma, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  margin: 0;
+  color: #333333;
+  background-color: #e9f0f5;
+}
+
+#app {
+  display: flex;
+  height: 100vh;
+}
+
+#app side {
+  padding: 12px;
+  width: 200px;
+}
+
+#app main {
+  padding: 12px;
+  flex: 1;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+img.icon {
+  height: 1rem;
+  margin-bottom: -4px;
+}
+
+.bar {
+  height: 1rem;
+  border: 1px solid gray;
+}
+
+.bar-value {
+  background-color: greenyellow;
+  height: 100%;
+}
+
+
+section > div {
+  margin-left: 12px;
+}
+
+#experience h3 {
+  display: inline-block;
+  margin: 0;
+  margin-bottom: 0;
+}
+
+#experience div ul {
+  margin-top: 0;
+  margin-left: 32px;
+  padding-left: 4px;
+  border-left: 1px solid lightgray;
+}
+

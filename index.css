@@ -2,13 +2,14 @@ body {
   font-family: 'Ubuntu', Tahoma, 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 16px;
   margin: 0;
-  color: #333333;
-  background-color: #e9f0f5;
+  color: #12343b;
+  background-color: #eeeeee;
+  height: 100vh;
 }
 
 #app {
   display: flex;
-  height: 100vh;
+  height: 100%;
 }
 
 #app side {
@@ -19,6 +20,19 @@ body {
 #app main {
   padding: 12px;
   flex: 1;
+}
+
+#avatar {
+  width: 100%;
+  text-align: center;
+}
+
+#avatar img{
+  width: 120px;
+  height: 120px;
+  border: 1px solid #c89666;
+  padding: 2px;
+  border-radius: 60px;
 }
 
 ul {
@@ -33,17 +47,18 @@ img.icon {
 
 .bar {
   height: 1rem;
-  border: 1px solid gray;
+  border: 1px solid #c89666;
+  border-radius: 4px;
 }
 
 .bar-value {
-  background-color: greenyellow;
+  background-color: #e1b382;
   height: 100%;
 }
 
 
 section > div {
-  margin-left: 12px;
+  margin-left: 24px;
 }
 
 #experience h3 {
@@ -54,8 +69,19 @@ section > div {
 
 #experience div ul {
   margin-top: 0;
-  margin-left: 32px;
   padding-left: 4px;
   border-left: 1px solid lightgray;
+}
+
+#experience div ul li {
+  padding: 2px 0;
+}
+
+/* 如果螢幕寬度為 600px 以下 */
+@media screen and (max-width:600px) { 
+  #app {
+    padding: 6px;
+    display: block;
+  }
 }
 

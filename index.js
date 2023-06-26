@@ -14,6 +14,7 @@ const skills = [
   { name: 'T-SQL', value: 80 },
   { name: 'MongoDB', value: 60 },
   { name: 'TDD', value: 80 },
+  { name: 'Docker', value: 50 },
 ];
 
 const experiences = [

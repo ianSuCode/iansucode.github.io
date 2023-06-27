@@ -26,6 +26,7 @@ body {
 #app main {
   padding: 12px;
   margin-left: 200px;
+  min-width: 150px;
 }
 
 #avatar {

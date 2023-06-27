@@ -1,5 +1,5 @@
 const skills = [
-  { name: 'HTML5/CSS3', value: 95 },
+  { name: 'HTML5/CSS3/RWD', value: 95 },
   { name: 'Javascript', value: 90 },
   { name: 'Angular', value: 70 },
   { name: 'React', value: 80 },
@@ -23,7 +23,7 @@ const experiences = [
     contents: [
       '數據分析顯示前端 (Vue3/Chart.js)',
       '幫同事的專案編寫Test (Python)',
-      '機台gRPC通訊 (.Net Core)',
+      '機台gRPC通訊 (.Net Core 6)',
       '空調即時監控網站 (React/.Net Core/WebSockt)',
       'Server設備管理監控網站 (Angular/.Net Core)',
       '網站銀行手機頁面 (Angular/.Net Framework)',

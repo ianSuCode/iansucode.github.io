@@ -10,8 +10,6 @@
   width: inherit;
   height: inherit;
   position: relative;
-  -webkit-transform-style: preserve-3d;
-  -webkit-animation: rolling 3s infinite linear;
   transform-style: preserve-3d;
   animation: rolling 3s infinite linear;
 }

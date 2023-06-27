@@ -86,7 +86,11 @@ const works = [
 ];
 
 const samples = [
-  { name: 'Fastival List', description: 'React 18 CDN, Babel CDN, Tailwind CDN, Open Data', link: './festival.html'}
+  { 
+    name: 'Fastival List', 
+    description: 'React 18 CDN, Babel CDN, Tailwind CDN, Open Data, 使用 localStorage 紀錄喜歡的活動', 
+    link: './festival.html'
+  }
 ]
 
 const generateSkillList = skills => {

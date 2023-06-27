@@ -55,6 +55,36 @@ const experiences = [
   }
 ];
 
+const works = [
+  {
+    name: '數據分析顯示前端',
+    photos: ['edm.png'],
+    descriptions: [
+      '功能: 顯示數據分析的結果',
+      '前端: Vue3 / Chart.js'
+    ]
+  },
+  {
+    name: 'Server設備管理監控網站',
+    photos: ['msp/msp01.png', 'msp/msp02.png'],
+    descriptions: [
+      '功能: 顯示機台設備的CPU/Memory/硬碟/網路...等當前與歷史狀態',
+      '前端: Angular 7 / HightChart.js',
+      '後端: .NET Core 2.2 WebAPI / JWT / Repository / Unit Of Work',
+      '備註: 資料庫由他人管理並限定使用MySQL與InfluxDB, 使用.NET Core/Entity Framework Core 連結指定的資料庫'
+    ]
+  },
+  { 
+    name: '空調即時監控網站', 
+    photos: ['cu/all.png', 'cu/chart.png', 'cu/img.png'],
+    descriptions: [
+      '功能: 獨立開發使用 WebSocket 技術設計後端API, 讓空調相關設備傳送即時資料並顯示在前端頁面上; 可從前端頁面上輸入設定值讓設備在指定情況下調整狀態',
+      '前端: React / React-Redux / HightChart.js',
+      '後端: ASP.NET Core 2.1 / Entity Framework / MSSQL / JWT / Repository / Unit Of Work',
+    ] 
+  }
+];
+
 const generateSkillList = skills => {
   return skills.map(it => `
     <li>
@@ -79,6 +109,20 @@ const generateExperienceList = experiences => {
   `).join('');
 }
 
-document.getElementById('skills').innerHTML = generateSkillList(skills);
+const generateWorkBlocks = works => {
+  return works.map(it => `
+    <div class="card">
+      <div class="card-head"><span>${it.name}</span></div>
+      <div class="card-body">
+        ${it.photos.map(p => `<img class="work-photo" src="./assets/${p}" />`).join('')}
+      </div>
+      <div class="card-foot">
+        ${it.descriptions.map(d => `<p>${d}</p>`).join('')}
+      </div>
+    </div>
+  `).join('');
+}
 
-document.getElementById('experience').innerHTML = generateExperienceList(experiences);
+document.getElementById('skills').innerHTML = generateSkillList(skills);
+document.getElementById('experiences').innerHTML = generateExperienceList(experiences);
+document.getElementById('works').innerHTML = generateWorkBlocks(works);

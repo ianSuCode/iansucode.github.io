@@ -85,6 +85,10 @@ const works = [
   }
 ];
 
+const samples = [
+  { name: 'Fastival List', description: 'React 18 CDN, Babel CDN, Tailwind CDN, Open Data', link: './festival.html'}
+]
+
 const generateSkillList = skills => {
   return skills.map(it => `
     <li>
@@ -123,6 +127,16 @@ const generateWorkBlocks = works => {
   `).join('');
 }
 
+const generateSampleList = samples => {
+  return samples.map(it =>`
+    <li>
+      <a href="${it.link}" >${it.name}</a><br />
+      <span>${it.description}</span>
+    </li>
+  `).join('');
+}
+
 document.getElementById('skills').innerHTML = generateSkillList(skills);
 document.getElementById('experiences').innerHTML = generateExperienceList(experiences);
 document.getElementById('works').innerHTML = generateWorkBlocks(works);
+document.getElementById('samples').innerHTML = generateSampleList(samples);

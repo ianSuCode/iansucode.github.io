@@ -58,7 +58,7 @@ const experiences = [
 const works = [
   {
     name: '數據分析顯示前端',
-    photos: ['edm.png'],
+    photos: ['edm.gif'],
     descriptions: [
       '功能: 顯示數據分析的結果',
       '前端: Vue3 / Chart.js'

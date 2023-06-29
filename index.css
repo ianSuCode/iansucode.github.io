@@ -18,9 +18,14 @@ body {
 }
 
 #app side {
-  padding: 12px;
   display: block;
+  padding: 12px;
   flex: 0 1 220px; 
+}
+
+#app side #skill-box {
+  position: sticky;
+  top: 0;
 }
 
 #app main {
@@ -114,6 +119,10 @@ section > div {
   #app {
     padding: 6px;
     display: unset;
+  }
+
+  #app side #skill-box {
+    position: unset;
   }
 }
 

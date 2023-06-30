@@ -21,66 +21,69 @@ const experiences = [
   { company: '盟立集團 Mirle', 
     period: '2017 ~ Present',
     contents: [
-      '數據分析顯示前端 (Vue3/Chart.js)',
-      '幫同事的專案編寫Test (Python)',
-      '機台gRPC通訊 (.Net Core 6)',
-      '空調即時監控網站 (React/.Net Core/WebSockt)',
-      'Server設備管理監控網站 (Angular/.Net Core)',
-      '網站銀行手機頁面 (Angular/.Net Framework)',
-      '路燈報修網站 (Angular/.Net Framework)',
-      '銀行內部網站SSO功能 (.Net Framework)',
-      '員工教學，技術指導'
+      { name: 'EDM(Equipment data monitor) web - Frontend', skills: 'Vue3/Chart.js', anchor: 'edm'},
+      { name: 'Adding tests for a colleague\'s project', skills: 'Python'},
+      { name: 'AGV gRPC communication', skills: '.Net Core 6'},
+      { name: 'A/C real-time monitor web', skills: 'React/.Net Core/WebSockt', anchor: 'ac'},
+      { name: 'Server management web', skills: 'Angular/.Net Core', anchor: 'server'},
+      { name: 'Bank mobile web', skills: 'Angular/.Net Framework'},
+      { name: 'Streetlight repair web', skills: 'Angular/.Net Framework'},
+      { name: 'Bank internal web SSO', skills: '.Net Framework'},
+      'Employee training and technical guidance'
     ]
   }, {
     company: '東森信息科技',
     period: '2014 ~ 2017',
     contents: [
-      'B2B/B2E供應商系統',
-      '內部資訊管理系統',
-      '照片管理系統',
-      '新技術研究，尋找最佳解決方案'
+      'B2B/B2E supplier web',
+      'Internal information management web',
+      'Photo management web',
+      'Researching new technologies to find the best solution'
     ]
   }, {
     company: '多奇數位/大心數位',
     period: '2012 ~ 2014',
-    contents: ['活動企劃網站', '電影社群網站']
+    contents: ['Event planning web', 'Movie social networking web']
   }, {
     company: '啟耀光電',
     period: '2007 ~ 2010',
     contents: [
-      '生產管理系統',
-      '紙本表單資訊化',
-      '實驗室管理資訊系統'
+      'MES(Manufacturing execution system) web',
+      'Paper-based forms to web-based forms',
+      'Lab Management Information web'
     ]
   }
 ];
 
 const works = [
   {
-    name: '數據分析顯示前端',
+    id: 'edm',
+    name: 'EDM(Equipment data monitor) web - Frontend',
     photos: ['edm.gif'],
     descriptions: [
-      '功能: 顯示數據分析的結果',
-      '前端: Vue3 / Chart.js'
+      'Displaying data analysis results.',
+      'Frontend: Vue3 / Chart.js'
     ]
   },
   {
-    name: 'Server設備管理監控網站',
+    id: 'server',
+    name: 'Server management web',
     photos: ['msp/msp01.png', 'msp/msp02.png'],
     descriptions: [
-      '功能: 顯示機台設備的CPU/Memory/硬碟/網路...等當前與歷史狀態',
-      '前端: Angular 7 / HightChart.js',
-      '後端: .NET Core 2.2 WebAPI / JWT / Repository / Unit Of Work',
-      '備註: 資料庫由他人管理並限定使用MySQL與InfluxDB, 使用.NET Core/Entity Framework Core 連結指定的資料庫'
+      'Displaying current and historical status of machine equipment including CPU, memory, hard disk, network, and more.',
+      'Frontend: Angular 7 / HightChart.js',
+      'Backend: .NET Core 2.2 WebAPI / JWT / Repository / Unit Of Work',
+      'Note: The database is managed by someone else and limited to MySQL and InfluxDB. Use .NET Core and Entity Framework Core to connect to the designated database.'
     ]
   },
   { 
-    name: '空調即時監控網站', 
+    id: 'ac',
+    name: 'A/C real-time monitor web', 
     photos: ['cu/all.png', 'cu/chart.png', 'cu/img.png'],
     descriptions: [
-      '功能: 獨立開發使用 WebSocket 技術設計後端API, 讓空調相關設備傳送即時資料並顯示在前端頁面上; 可從前端頁面上輸入設定值讓設備在指定情況下調整狀態',
-      '前端: React / React-Redux / HightChart.js',
-      '後端: ASP.NET Core 2.1 / Entity Framework / MSSQL / JWT / Repository / Unit Of Work',
+      'Developing an backend API using WebSocket for real-time transmission from A/C devices and display it. Users will be able to input configuration values to adjust the A/C device\'s status.',
+      'Frontend: React / React-Redux / HightChart.js',
+      'Backend: ASP.NET Core 2.1 / Entity Framework / MSSQL / JWT / Repository / Unit Of Work',
     ] 
   }
 ];
@@ -88,7 +91,7 @@ const works = [
 const samples = [
   { 
     name: 'Fastival List', 
-    description: 'React 18 CDN, Babel CDN, Tailwind CDN, Open Data, 使用 localStorage 紀錄喜歡的活動', 
+    description: 'React 18 CDN, Babel CDN, Tailwind CDN, Open Data, Using localStorage to record favorite activities', 
     link: './festival.html'
   }
 ]
@@ -110,7 +113,20 @@ const generateExperienceList = experiences => {
       <h3>${it.company}</h3>
       <div>
         <ul>
-          ${it.contents.map(content => `<li>${content}</li>`).join('')}
+          ${it.contents.map(content => {
+            let htmlContent = ''
+            if (typeof content === 'string') {
+              htmlContent = `<span>${content}</span>`
+            } else {
+              if (content.anchor) {
+                htmlContent = `<a href="#work-${content.anchor}">${content.name}</a>`
+              } else {
+                htmlContent = `<span>${content.name}</span>`
+              }
+              htmlContent += ` <small>(${content.skills})</small>`
+            }
+            return `<li>${htmlContent}</li>`;
+          }).join('')}
         </ul>
       </div>
     </div>
@@ -119,7 +135,7 @@ const generateExperienceList = experiences => {
 
 const generateWorkBlocks = works => {
   return works.map(it => `
-    <div class="card">
+    <div class="card" id="work-${it.id}">
       <div class="card-head"><span>${it.name}</span></div>
       <div class="card-body">
         ${it.photos.map(p => `<img class="work-photo" src="./assets/${p}" />`).join('')}

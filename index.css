@@ -88,7 +88,19 @@ section > div {
   padding: 2px 0;
 }
 
-#educations p{
+#experiences div ul li::before {
+  content: "\2022";
+  color: var(--sand-tan-shadow-color);
+  font-weight: bold;
+  display: inline-block; 
+  width: 1em;
+}
+
+#experiences div ul li small {
+  color: var(--sand-tan-color);
+}
+
+#educations p {
   margin: 0;
 }
 

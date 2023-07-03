@@ -1,7 +1,10 @@
 :root {
-  --sand-tan-color: #e1b382;
-  --sand-tan-shadow-color: #c89666;
+  --sand-tan-rgb: 225, 179, 130;
+  --sand-tan-color: rgb(var(--sand-tan-rgb));
+  --sand-tan-color-a: rgba(var(--sand-tan-rgb), 0.7);
+  --sand-tan-shadow-color: rgb(200, 150, 102);
   --font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+
 }
 
 body {
@@ -27,6 +30,26 @@ body {
 #app side #skill-box {
   position: sticky;
   top: 0;
+}
+
+#app side #skill-box > h3{
+  margin: 0;
+}
+
+#app side #skill-box > #skills{
+  margin: 0;
+}
+
+#app side #skill-box > #skills li{
+  margin-bottom: 2px;
+}
+
+#app side #skill-box > #skills li span{
+  margin-left: 6px;
+}
+
+#app side #skill-box > #skills li .bar{
+  margin-top: -20px;
 }
 
 #app main {
@@ -59,12 +82,12 @@ img.icon {
 
 .bar {
   height: 1rem;
-  border: 1px solid #c89666;
+  border: 2px solid #c89666;
   border-radius: 4px;
 }
 
 .bar-value {
-  background-color: var(--sand-tan-color);
+  background-color: var(--sand-tan-color-a);
   height: 100%;
 }
 

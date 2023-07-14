@@ -93,6 +93,10 @@ const samples = [
     name: 'Fastival List', 
     description: 'React 18 CDN, Babel CDN, Tailwind CDN, Open Data, Using localStorage to record favorite activities', 
     link: './festival.html'
+  }, {
+    name: 'eShop (backend)',
+    description: 'Node.js rest api with Express, MongoDB, JWT', 
+    link: 'https://github.com/ianSuCode/eshop.backend-nodejs'
   }
 ]
 

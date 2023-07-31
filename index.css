@@ -134,6 +134,14 @@ section > div {
   border-radius: 6px;
 }
 
+#soruce-code ul{
+  margin: 0 1rem;
+}
+
+#soruce-code .soruce-code-features {
+  color: var(--sand-tan-shadow-color);
+}
+
 .card {
   border: 1px solid var(--sand-tan-shadow-color);
   border-radius: 12px;

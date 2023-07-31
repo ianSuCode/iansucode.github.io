@@ -1,11 +1,11 @@
 const skills = [
   { name: 'HTML5/CSS3/RWD', value: 95 },
   { name: 'Javascript', value: 90 },
-  { name: 'Angular', value: 70 },
-  { name: 'React', value: 80 },
   { name: 'Vue 3', value: 90 },
+  { name: 'React', value: 80 },
+  { name: 'Angular', value: 70 },
   { name: 'Chart.js', value: 90 },
-  { name: 'NodeJs', value: 80 },
+  { name: 'Node.Js', value: 80 },
   { name: 'C#', value: 90 },
   { name: '.Net Framework/.Net Core', value: 80 },
   { name: 'Entity Framework/Linq', value: 80 },
@@ -88,15 +88,11 @@ const works = [
   }
 ];
 
-const samples = [
+const liveDemos = [
   { 
     name: 'Fastival List', 
     description: 'React 18 CDN, Babel CDN, Tailwind CDN, Open Data, Using localStorage to record favorite activities', 
     link: './festival.html'
-  }, {
-    name: 'eShop (backend)',
-    description: 'Node.js rest api with Express, MongoDB, JWT', 
-    link: 'https://github.com/ianSuCode/eshop.backend-nodejs'
   }
 ]
 
@@ -151,8 +147,8 @@ const generateWorkBlocks = works => {
   `).join('');
 }
 
-const generateSampleList = samples => {
-  return samples.map(it =>`
+const generateLiveDemoList = liveDemos => {
+  return liveDemos.map(it =>`
     <li>
       <a href="${it.link}" >${it.name}</a><br />
       <span>${it.description}</span>
@@ -163,4 +159,4 @@ const generateSampleList = samples => {
 document.getElementById('skills').innerHTML = generateSkillList(skills);
 document.getElementById('experiences').innerHTML = generateExperienceList(experiences);
 document.getElementById('works').innerHTML = generateWorkBlocks(works);
-document.getElementById('samples').innerHTML = generateSampleList(samples);
+document.getElementById('live-demo').innerHTML = generateLiveDemoList(liveDemos);

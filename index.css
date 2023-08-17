@@ -145,6 +145,9 @@ section > div {
 #soruce-code .soruce-code-features {
   color: var(--sand-tan-shadow-color);
 }
+#soruce-code img {
+  width: 90%; 
+}
 
 .card {
   border: 1px solid var(--sand-tan-shadow-color);

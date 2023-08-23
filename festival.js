@@ -111,7 +111,7 @@ const Modal = ({item, onModalclose}) => {
 
       <div className="fixed inset-0 z-10">
         <div className="flex h-screen items-end justify-center p-4 text-center sm:items-center">
-          <div className="max-h-[80vh] relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all">
+          <div className="max-h-[80vh] mb-20 relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all">
             <div className="max-h-[80vh] flex flex-col h-full bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
               <div className="bg-gray-50 px-4 py-3" id="modal-title">
                 <h3 className="text-base font-semibold leading-6 text-gray-900" >{item.actName}</h3>

@@ -10,6 +10,7 @@ const skills = [
   { name: '.Net Framework/.Net Core', value: 80 },
   { name: 'Entity Framework/Linq', value: 80 },
   { name: 'Python', value: 70 },
+  { name: 'Next.js', value: 50 },
   { name: 'Git', value: 90 },
   { name: 'T-SQL', value: 80 },
   { name: 'MongoDB', value: 60 },
@@ -21,6 +22,7 @@ const experiences = [
   { company: '盟立集團 Mirle', 
     period: '2017 ~ Present',
     contents: [
+      { name: 'Big data visualization', skills: 'Next.js 15/Chart.js/MongoDB'},
       { name: 'EDM(Equipment data monitor) web - Frontend', skills: 'Vue3/Chart.js', anchor: 'edm'},
       { name: 'Adding tests for a colleague\'s project', skills: 'Python'},
       { name: 'AGV gRPC communication', skills: '.Net Core 6'},
